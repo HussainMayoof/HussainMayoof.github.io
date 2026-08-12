@@ -21,11 +21,5 @@ export default defineConfig({
 
   output: "static",
 
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
-  }),
-
   site: "https://www.hussainmayoof.com",
 });
