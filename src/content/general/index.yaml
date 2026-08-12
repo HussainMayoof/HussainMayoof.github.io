@@ -1,7 +1,7 @@
 projectsLayout: grid
 enableThemeSelector: false
 extraLinksEnabled: false
-extraLinks: []
+extraLinks: [ ]
 showAboutSection: false
 showProjectsSection: false
 showBlogSection: false

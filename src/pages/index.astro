@@ -7,15 +7,16 @@ import Projects from "../components/Projects.astro";
 import Blog from "../components/Blog.astro";
 import Hackathons from "../components/Hackathons.astro";
 import Contact from "../components/Contact.astro";
-import { Briefcase, GraduationCap } from "@lucide/astro";
-import { getEntry, render } from "astro:content";
+import {Briefcase, GraduationCap} from "@lucide/astro";
+import {getEntry, render} from "astro:content";
+import Skills from "../components/Skills.astro";
 
 // Load Hero singleton
 const heroEntry = await getEntry("hero", "index");
 
 // Load About singleton
 const aboutEntry = await getEntry("about", "index");
-const { Content: AboutContent } = await render(aboutEntry);
+const {Content: AboutContent} = await render(aboutEntry);
 
 // Load General singleton
 const generalEntry = await getEntry("general", "index");
@@ -23,65 +24,71 @@ const general = generalEntry.data;
 ---
 
 <Layout
-  title={`${heroEntry.data.name} - Portfolio`}
-  description={heroEntry.data.description}
+        title={`${heroEntry.data.name} - Portfolio`}
+        description={heroEntry.data.description}
 >
-  <main>
-    <!-- Hero Section (Always visible) -->
-    <Hero hero={heroEntry.data} />
+    <main>
+        <!-- Hero Section (Always visible) -->
+        <Hero hero={heroEntry.data}/>
 
-    <!-- All other sections hidden on mobile -->
-    <div class="hidden lg:block">
-      <!-- About Section -->
-      {
-        general.showAboutSection && (
-          <About
-            title={aboutEntry.data.title}
-            photo={aboutEntry.data.photo}
-            Content={AboutContent}
-            link={aboutEntry.data.link}
-          />
-        )
-      }
+        <!-- All other sections hidden on mobile -->
+        <div class="hidden lg:block">
+            <!-- About Section -->
+            {
+                general.showAboutSection && (
+                            <About
+                                    title={aboutEntry.data.title}
+                                    photo={aboutEntry.data.photo}
+                                    Content={AboutContent}
+                                    link={aboutEntry.data.link}
+                            />
+                )
+            }
 
-      <!-- Projects Section -->
-      {general.showProjectsSection && <Projects />}
+            <Skills />
 
-      <!-- Blog Section -->
-      {general.showBlogSection && <Blog />}
+            <!-- Projects Section -->
+            {general.showProjectsSection &&
+                    <Projects/>}
 
-      <!-- Work Experience Section -->
-      {
-        general.showWorkSection && (
-          <Timeline
-            collection="work"
-            variant="timeline"
-            color="primary"
-            icon={Briefcase}
-            sectionTitle="Work Experience"
-          />
-        )
-      }
+            <!-- Blog Section -->
+            {general.showBlogSection &&
+                    <Blog/>}
 
-      <!-- Education Section -->
-      {
-        general.showEducationSection && (
-          <Timeline
-            collection="education"
-            variant="list"
-            color="secondary"
-            backgroundColor="base-300"
-            icon={GraduationCap}
-            sectionTitle="Education"
-          />
-        )
-      }
+            <!-- Work Experience Section -->
+            {
+                general.showWorkSection && (
+                            <Timeline
+                                    collection="work"
+                                    variant="timeline"
+                                    color="primary"
+                                    icon={Briefcase}
+                                    sectionTitle="Work Experience"
+                            />
+                )
+            }
 
-      <!-- Hackathons Section -->
-      {general.showHackathonsSection && <Hackathons />}
+            <!-- Education Section -->
+            {
+                general.showEducationSection && (
+                            <Timeline
+                                    collection="education"
+                                    variant="list"
+                                    color="secondary"
+                                    backgroundColor="base-300"
+                                    icon={GraduationCap}
+                                    sectionTitle="Education"
+                            />
+                )
+            }
 
-      <!-- Contact Section -->
-      {general.showContactSection && <Contact />}
-    </div>
-  </main>
+            <!-- Hackathons Section -->
+            {general.showHackathonsSection &&
+                    <Hackathons/>}
+
+            <!-- Contact Section -->
+            {general.showContactSection &&
+                    <Contact/>}
+        </div>
+    </main>
 </Layout>

@@ -13,4 +13,7 @@ skills:
   - HTML
   - CSS
 ---
-Set up social media accounts and developed an official website for the Middle East branch of the company, enhancing brand visibility and driving digital engagement. Leveraged UI/UX best practices and principles to create an intuitive and user-friendly experience.
+
+Set up social media accounts and developed an official website for the Middle East branch of the company, enhancing
+brand visibility and driving digital engagement. Leveraged UI/UX best practices and principles to create an intuitive
+and user-friendly experience.

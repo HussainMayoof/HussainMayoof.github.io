@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import {defineConfig} from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -9,16 +9,16 @@ import keystatic from "@keystatic/astro";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), markdoc(), ...(process.env.NODE_ENV !== "production" ? [keystatic()] : []),],
+    integrations: [react(), markdoc(), ...(process.env.NODE_ENV !== "production" ? [keystatic()] : []),],
 
-  vite: {
-    plugins: [tailwindcss()],
-    optimizeDeps: {
-      include: ["@keystatic/core", "@keystatic/astro"],
+    vite: {
+        plugins: [tailwindcss()],
+        optimizeDeps: {
+            include: ["@keystatic/core", "@keystatic/astro"],
+        },
     },
-  },
 
-  output: "static",
+    output: "static",
 
-  site: "https://www.hussainmayoof.com",
+    site: "https://www.hussainmayoof.com",
 });

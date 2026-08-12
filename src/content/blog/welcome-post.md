@@ -8,7 +8,8 @@ tags: ["Introduction", "Web Development"]
 
 # Welcome to My Blog!
 
-Hello and welcome to my blog! I'm excited to share my journey, thoughts, and experiences in the world of web development and technology.
+Hello and welcome to my blog! I'm excited to share my journey, thoughts, and experiences in the world of web development
+and technology.
 
 ## What to Expect
 
@@ -21,7 +22,8 @@ In this blog, you can expect:
 
 ## About Me
 
-I'm a passionate developer who loves creating beautiful and functional web applications. With years of experience in the field, I've worked on a variety of projects ranging from small startups to large enterprise applications.
+I'm a passionate developer who loves creating beautiful and functional web applications. With years of experience in the
+field, I've worked on a variety of projects ranging from small startups to large enterprise applications.
 
 ## Let's Connect
 
