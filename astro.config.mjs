@@ -10,7 +10,7 @@ import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), markdoc(), keystatic()],
+  integrations: [react(), markdoc(), ...(process.env.NODE_ENV !== "production" ? [keystatic()] : []),],
 
   vite: {
     plugins: [tailwindcss()],
