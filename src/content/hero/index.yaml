@@ -1,0 +1,19 @@
+name: Hussain Mayoof
+title: >-
+  Computer Science undergraduate student at the British University of Bahrain -
+  Salford
+description: >-
+  A programmer and student interested in full stack development, machine
+  learning, and computer science research.
+avatar: '@assets/hero/avatar.jpg'
+location: 🇧🇭 Bahrain
+socialLinks:
+  - url: https://github.com/HussainMayoof
+    icon: GitHub
+    label: GitHub
+  - url: https://www.linkedin.com/in/hussainmayoof/
+    icon: LinkedIn
+    label: LinkedIn
+  - url: mailto:work@hussainmayoof.com
+    icon: Email
+    label: Email

@@ -1,0 +1,11 @@
+projectsLayout: grid
+enableThemeSelector: false
+extraLinksEnabled: false
+extraLinks: []
+showAboutSection: false
+showProjectsSection: true
+showBlogSection: false
+showWorkSection: true
+showEducationSection: true
+showHackathonsSection: false
+showContactSection: true
