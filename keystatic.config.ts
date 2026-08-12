@@ -244,14 +244,6 @@ export default config({
                     description: "Main contact message (supports Markdown)",
                     extension: "md",
                 }),
-                linkUrl: fields.url({
-                    label: "Contact Link URL",
-                    description: "URL for contact link (e.g., Twitter profile)",
-                }),
-                linkText: fields.text({
-                    label: "Contact Link Text",
-                    description: "Text for the contact link",
-                }),
                 footerIcon: fields.select({
                     label: "Footer Icon",
                     description: "Icon for footer credit",

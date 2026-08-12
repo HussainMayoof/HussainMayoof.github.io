@@ -198,8 +198,6 @@ const contact = defineCollection({
     loader: glob({pattern: "**/*.{md,mdoc,yaml}", base: "./src/content/contact"}),
     schema: z.object({
         icon: z.enum(["MessageCircleCode", "Mail", "Phone"]),
-        linkUrl: z.string().url(),
-        linkText: z.string(),
         footerIcon: z.enum(["Pickaxe", "Hammer", "Heart"]),
         footerText: z.string(),
         footerLinkText: z.string(),

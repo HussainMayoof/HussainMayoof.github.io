@@ -12,12 +12,12 @@ interface Props {
 const {skill} = Astro.props;
 ---
 
-<span class={`badge badge-xl badge-soft ${skill.colour} cursor-pointer duration-100 hover:text-xl hover:p-4`}>
-    {skill.logo &&
-            <Image
-                    src={skill.logo}
-                    alt={skill.title}
-                    class="size-[1em] rounded-xs object-contain"/>}
+<span class={`skill-badge badge badge-xl ${skill.colour} cursor-pointer duration-100 hover:text-xl hover:p-4`}>
+        {skill.logo &&
+                <Image
+                        src={skill.logo}
+                        alt={skill.title}
+                        class="size-[1em] rounded-xs object-contain"/>}
 
     {skill.title}
 </span>

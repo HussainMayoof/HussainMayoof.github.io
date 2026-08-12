@@ -17,3 +17,17 @@ The name should be the same as the theme name below.
     valentine,
     dim;
 }
+
+[data-theme="light"] .skill-badge {
+    @apply badge-outline;
+}
+
+[data-theme="dark"] .skill-badge {
+    @apply badge-soft;
+}
+
+.footer a {
+    @apply link;
+    @apply link-hover;
+    @apply text-primary;
+}
