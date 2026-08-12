@@ -3,7 +3,7 @@ enableThemeSelector: false
 extraLinksEnabled: false
 extraLinks: []
 showAboutSection: false
-showProjectsSection: true
+showProjectsSection: false
 showBlogSection: false
 showWorkSection: true
 showEducationSection: true
