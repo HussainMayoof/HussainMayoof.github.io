@@ -619,9 +619,6 @@ export default config({
             label: 'Hackathons',
             path: 'src/content/hackathons/*',
             slugField: 'title',
-            format: {
-                contentField: 'content',
-            },
             schema: {
                 title: fields.slug({
                     name: { label: 'Hackathon Name' },
@@ -653,11 +650,50 @@ export default config({
                     label: 'Project Link',
                     description: 'GitHub repo or project URL (optional)',
                 }),
-                content: fields.markdoc({
-                    label: 'Full Description',
-                    description:
-                        'Detailed information about the hackathon and project',
-                    extension: 'md',
+            },
+        }),
+
+        certificates: collection({
+            label: 'Certificates',
+            path: 'src/content/certificates/*',
+            slugField: 'title',
+            schema: {
+                title: fields.slug({
+                    name: { label: 'Certificate Name' },
+                }),
+                organisation: fields.text({
+                    label: 'Organisation',
+                }),
+                organisationLink: fields.text({
+                    label: 'Organisation Link (optional)',
+                }),
+                description: fields.text({
+                    label: 'Description',
+                    multiline: true,
+                    description: 'Brief course summary',
+                }),
+                date: fields.date({
+                    label: 'Certificate Date',
+                    validation: { isRequired: true },
+                }),
+                logo: fields.image({
+                    label: 'Course Logo',
+                    directory: 'src/assets/certficates',
+                    publicPath: '@assets/certficates/',
+                    description: 'Optional certificate logo',
+                }),
+                certificateLink: fields.url({
+                    label: 'Certificate Link',
+                    description: 'Link to the certificate (optional)',
+                }),
+                courseLink: fields.url({
+                    label: 'Course Link',
+                    description: "Link to the course's page (optional)",
+                }),
+                skills: fields.array(fields.text({ label: 'Skill' }), {
+                    label: 'Skills/Technologies',
+                    itemLabel: (props) => props.value,
+                    description: 'Technologies and tools learnt in this course',
                 }),
             },
         }),

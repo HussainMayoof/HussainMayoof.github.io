@@ -1,0 +1,14 @@
+title: Web Applications for Everybody Specialization
+organisation: University of Michigan (Coursera)
+organisationLink: https://www.coursera.org/partners/umich
+description: >-
+  A course covering the basics of back-end web applications using pure PHP,
+  MySQL databases, and accessing the back-end using jQuery.
+date: 2022-09-08
+logo: '@assets/certficates/web-applications-for-everybody-specialization/logo.avif'
+certificateLink: https://www.coursera.org/account/accomplishments/specialization/certificate/4PBVYRFDGTY6
+courseLink: https://www.coursera.org/specializations/web-applications
+skills:
+  - PHP
+  - MySQL
+  - jQuery

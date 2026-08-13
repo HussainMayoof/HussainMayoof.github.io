@@ -45,10 +45,10 @@ function formatPeriod(startDate: Date, endDate?: Date) {
                         <div class="card-body">
                             <div class="flex items-start gap-4">
                                 {hackathon.data.logo && (
-                                    <div class="avatar flex-shrink-0">
+                                    <div class="avatar shrink-0">
                                         <div class="w-16 h-16 rounded">
                                             <img
-                                                src={hackathon.data.logo}
+                                                src={hackathon.data.logo.src}
                                                 alt={hackathon.data.title}
                                             />
                                         </div>
