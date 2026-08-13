@@ -1,8 +1,6 @@
 # [Hussain Mayoof](https://www.hussainmayoof.com)
 
----
-
-This personal portfolio site was created and extended using Lauro
+> This personal portfolio site was created and extended using Lauro
 Guedes' [Bloomfolio Astro Template](https://github.com/lauroguedes/bloomfolio).
 
 ---
