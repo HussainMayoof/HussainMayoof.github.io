@@ -1,0 +1,115 @@
+---
+import { getCollection } from 'astro:content';
+import SkillBadge from './SkillBadge.astro';
+import { Image } from 'astro:assets';
+
+const volunteeringEntries = await getCollection('volunteering');
+
+// Sort by start date, most recent first
+const sortedVolunteering = volunteeringEntries.sort(
+    (a, b) => b.data.startDate.getTime() - a.data.startDate.getTime()
+);
+
+const formatPeriod = (startDate: Date, endDate?: Date) => {
+    const options: Intl.DateTimeFormatOptions = {
+        month: 'short',
+        year: 'numeric',
+    };
+    const start = startDate.toLocaleDateString('en-US', options);
+
+    if (endDate && endDate.getTime() !== startDate.getTime()) {
+        const end = endDate.toLocaleDateString('en-US', options);
+        return `${start} - ${end}`;
+    }
+
+    return `${start} - Present`;
+};
+---
+
+<section id="volunteering" class="py-20 px-4 bg-base-100">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Volunteering</h2>
+            <p class="text-lg text-base-content/70">
+                I like to be an active part of my community and help out
+                wherever I can, here are some examples of that:
+            </p>
+        </div>
+
+        <div class="space-y-6">
+            <ul class="list bg-base-200 rounded-box shadow-lg">
+                {
+                    sortedVolunteering.map((volunteering) => (
+                        <li class="border-b p-4 hover:opacity-85 transition-opacity border-base-300">
+                            <div class="list-row p-0 gap-6 items-center after:hidden">
+                                <div>
+                                    {volunteering.data.logo && (
+                                        <div class="avatar">
+                                            <div class="w-10 mask mask-squircle">
+                                                <Image
+                                                    src={volunteering.data.logo}
+                                                    alt={
+                                                        volunteering.data.title
+                                                    }
+                                                    inferSize={true}
+                                                />
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div class="flex flex-col gap-2">
+                                    <div>
+                                        <p class="font-bold text-lg">
+                                            {volunteering.data.title}
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <p class="font-semibold text-md">
+                                            {volunteering.data
+                                                .organisationLink ? (
+                                                <a
+                                                    href={
+                                                        volunteering.data
+                                                            .organisationLink
+                                                    }
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    class="link link-accent link-hover"
+                                                >
+                                                    {
+                                                        volunteering.data
+                                                            .organisation
+                                                    }
+                                                </a>
+                                            ) : (
+                                                <span>
+                                                    {
+                                                        volunteering.data
+                                                            .organisation
+                                                    }
+                                                </span>
+                                            )}
+                                        </p>
+                                    </div>
+
+                                    <div class="text-sm">
+                                        {volunteering.data.description}
+                                    </div>
+                                </div>
+
+                                <div class="text-sm text-base-content/70 font-mono whitespace-nowrap">
+                                    {formatPeriod(
+                                        volunteering.data.startDate,
+                                        volunteering.data.endDate
+                                    )}
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </div>
+</section>

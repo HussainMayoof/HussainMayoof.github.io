@@ -8,7 +8,7 @@ const sortedHackathons = hackathonEntries.sort(
     (a, b) => b.data.startDate.getTime() - a.data.startDate.getTime()
 );
 
-function formatPeriod(startDate: Date, endDate?: Date) {
+const formatPeriod = (startDate: Date, endDate?: Date) => {
     const options: Intl.DateTimeFormatOptions = {
         month: 'short',
         day: 'numeric',
@@ -22,7 +22,7 @@ function formatPeriod(startDate: Date, endDate?: Date) {
     }
 
     return start;
-}
+};
 ---
 
 <section id="hackathons" class="py-20 px-4">

@@ -697,5 +697,40 @@ export default config({
                 }),
             },
         }),
+
+        volunteering: collection({
+            label: 'Volunteering',
+            path: 'src/content/volunteering/*',
+            slugField: 'title',
+            schema: {
+                title: fields.slug({
+                    name: { label: 'Volunteering Position' },
+                }),
+                organisation: fields.text({
+                    label: 'Organisation',
+                }),
+                organisationLink: fields.text({
+                    label: 'Organisation Link (optional)',
+                }),
+                logo: fields.image({
+                    label: 'Organisation Logo',
+                    directory: 'src/assets/volunteering',
+                    publicPath: '@assets/volunteering/',
+                    description: 'Optional organisation logo',
+                }),
+                description: fields.text({
+                    label: 'Description',
+                    multiline: true,
+                    description: 'Brief summary of your volunteer work',
+                }),
+                startDate: fields.date({
+                    label: 'Start date',
+                    validation: { isRequired: true },
+                }),
+                endDate: fields.date({
+                    label: 'End date',
+                }),
+            },
+        }),
     },
 });

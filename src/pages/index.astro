@@ -11,6 +11,7 @@ import { Briefcase, GraduationCap } from '@lucide/astro';
 import { getEntry, render } from 'astro:content';
 import Skills from '../components/Skills.astro';
 import Certificates from '../components/Certificates.astro';
+import Volunteering from '../components/Volunteering.astro';
 
 // Load Hero singleton
 const heroEntry = await getEntry('hero', 'index');
@@ -94,6 +95,8 @@ const general = generalEntry.data;
             {general.showHackathonsSection && <Hackathons />}
 
             <Certificates />
+
+            <Volunteering />
 
             <!-- Contact Section -->
             {general.showContactSection && <Contact />}

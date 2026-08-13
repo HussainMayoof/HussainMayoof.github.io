@@ -1,7 +1,6 @@
 import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
-import { fields } from '@keystatic/core';
 
 // Hero singleton
 const hero = defineCollection({
@@ -185,6 +184,24 @@ const certificates = defineCollection({
         }),
 });
 
+// Volunteering collection
+const volunteering = defineCollection({
+    loader: glob({
+        pattern: '**/*.{md,mdoc,yaml}',
+        base: './src/content/volunteering',
+    }),
+    schema: ({ image }) =>
+        z.object({
+            title: z.string(),
+            organisation: z.string(),
+            organisationLink: z.url().optional(),
+            logo: image().optional(),
+            description: z.string(),
+            startDate: z.date(),
+            endDate: z.date().optional(),
+        }),
+});
+
 // About singleton
 const about = defineCollection({
     loader: glob({
@@ -269,6 +286,7 @@ export const collections = {
     blog,
     skills,
     certificates,
+    volunteering,
     about,
     general,
     contact,
