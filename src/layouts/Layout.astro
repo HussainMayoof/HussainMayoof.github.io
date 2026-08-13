@@ -9,6 +9,9 @@ import { getEntry } from 'astro:content';
 
 // Load general singleton
 const generalEntry = await getEntry('general', 'index');
+if (!generalEntry) {
+    throw new Error('General settings not found');
+}
 const general = generalEntry.data;
 
 interface Props {
@@ -17,8 +20,8 @@ interface Props {
 }
 
 const {
-    title = 'Bloomfolio Template',
-    description = 'A modern portfolio template built with Astro and DaisyUI',
+    title = 'Hussain',
+    description = 'A programmer and student interested in full stack development, machine learning, and computer science research.',
 } = Astro.props;
 
 // Custom blur-fade animation configuration
