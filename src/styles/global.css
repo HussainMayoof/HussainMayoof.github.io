@@ -18,6 +18,11 @@ The name should be the same as the theme name below.
     dim;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 [data-theme='light'] .skill-badge {
     @apply badge-outline;
 }
