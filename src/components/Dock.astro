@@ -1,27 +1,28 @@
 ---
-import {getIcon} from "../utils/iconMapper";
+import { getIcon } from '../utils/iconMapper';
+import type { IconName } from '../utils/iconMapper.ts';
 
 interface Props {
     extraLinks: Array<{
         link: string;
         icon: string;
         label: string;
-        displayOn?: "both" | "dock" | "fab";
+        displayOn?: 'both' | 'dock' | 'fab';
     }>;
 }
 
-const {extraLinks} = Astro.props;
+const { extraLinks } = Astro.props;
 ---
 
 <div class="dock dock-lg bg-neutral text-neutral-content lg:hidden z-50">
     {
         extraLinks.map((link) => {
-            const IconComponent = getIcon(link.icon as any);
+            const IconComponent = getIcon(link.icon as IconName);
             return (
-                    <a href={link.link} class="dock-item" aria-label={link.label}>
-                        <IconComponent class="size-6"/>
-                        <span class="dock-label">{link.label}</span>
-                    </a>
+                <a href={link.link} class="dock-item" aria-label={link.label}>
+                    <IconComponent class="size-6" />
+                    <span class="dock-label">{link.label}</span>
+                </a>
             );
         })
     }

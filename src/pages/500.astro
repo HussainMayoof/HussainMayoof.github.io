@@ -1,20 +1,20 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import {House, ArrowLeft} from "@lucide/astro";
+import Layout from '../layouts/Layout.astro';
+import { House, ArrowLeft } from '@lucide/astro';
 
 interface Props {
     error?: unknown;
 }
 
-const {error} = Astro.props;
+const { error } = Astro.props;
 
-// Sanitize error for display - NEVER expose sensitive server details in production
+// Sanitise error for display - NEVER expose sensitive server details in production
 const displayMessage =
-    "An unexpected error occurred while processing your request.";
+    'An unexpected error occurred while processing your request.';
 
 // Log full error server-side for debugging (only visible in server logs)
 if (error instanceof Error) {
-    console.error("500 Server Error:", {
+    console.error('500 Server Error:', {
         message: error.message,
         stack: error.stack,
         timestamp: new Date().toISOString(),
@@ -23,13 +23,15 @@ if (error instanceof Error) {
 ---
 
 <Layout
-        title="500 - Server Error | Bloomfolio"
-        description="An error occurred while processing your request."
+    title="500 - Server Error | Bloomfolio"
+    description="An error occurred while processing your request."
 >
     <div class="min-h-screen flex items-center justify-center px-4 py-20">
         <div class="text-center max-w-2xl mx-auto">
             <!-- Large 500 Number -->
-            <h1 class="text-9xl font-bold text-error mb-4 animate-pulse">500</h1>
+            <h1 class="text-9xl font-bold text-error mb-4 animate-pulse">
+                500
+            </h1>
 
             <!-- Error Title -->
             <h2 class="text-4xl font-bold mb-4">Server Error</h2>
@@ -37,7 +39,7 @@ if (error instanceof Error) {
             <!-- Error Description -->
             <p class="text-xl mb-8 text-base-content/70">
                 {displayMessage}
-                <br/>
+                <br />
                 Please try again later or contact support if the problem persists.
             </p>
 
@@ -47,11 +49,11 @@ if (error instanceof Error) {
             <!-- Action Buttons -->
             <div class="flex gap-4 justify-center flex-wrap mt-8">
                 <a href="/" class="btn btn-primary gap-2">
-                    <House class="size-5"/>
+                    <House class="size-5" />
                     Go Home
                 </a>
                 <button onclick="history.back()" class="btn btn-outline gap-2">
-                    <ArrowLeft class="size-5"/>
+                    <ArrowLeft class="size-5" />
                     Go Back
                 </button>
             </div>
@@ -59,8 +61,9 @@ if (error instanceof Error) {
             <!-- Note about SSR -->
             <div class="mt-12 p-4 bg-base-200 rounded-lg">
                 <p class="text-sm text-base-content/60">
-                    <strong>Note:</strong> This error page is only active when using Server-Side
-                    Rendering (SSR). Currently, Bloomfolio is configured for static generation.
+                    <strong>Note:</strong> This error page is only active when using
+                    Server-Side Rendering (SSR). Currently, Bloomfolio is configured
+                    for static generation.
                 </p>
             </div>
 
@@ -71,15 +74,15 @@ if (error instanceof Error) {
                     <a href="/#contact" class="link link-hover">Contact</a>
                     <span class="text-base-content/30">•</span>
                     <a
-                            href="/blog/guides/bloomfolio-complete-guide-building-your-portfolio"
-                            class="link link-hover">Documentation</a
+                        href="/blog/guides/bloomfolio-complete-guide-building-your-portfolio"
+                        class="link link-hover">Documentation</a
                     >
                     <span class="text-base-content/30">•</span>
                     <a
-                            href="https://github.com/lauroguedes/bloomfolio/issues"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="link link-hover">Report Issue</a
+                        href="https://github.com/lauroguedes/bloomfolio/issues"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="link link-hover">Report Issue</a
                     >
                 </div>
             </div>

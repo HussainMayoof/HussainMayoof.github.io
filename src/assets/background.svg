@@ -7,11 +7,11 @@
           clip-rule="evenodd" style="opacity:.154"/>
     <defs>
         <linearGradient id="b" x1="373" x2="1995.44" y1="1100" y2="118.03" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#D83333"/>
+            <stop offset="0" stop-color="#D83333"/>
             <stop offset="1" stop-color="#F041FF"/>
         </linearGradient>
         <linearGradient id="a" x1="107.37" x2="1130.66" y1="1993.35" y2="1026.31" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#3245FF"/>
+            <stop offset="0" stop-color="#3245FF"/>
             <stop offset="1" stop-color="#BC52EE"/>
         </linearGradient>
     </defs>

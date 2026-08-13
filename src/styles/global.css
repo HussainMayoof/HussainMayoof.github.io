@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @plugin "@tailwindcss/typography";
 /* 
@@ -10,19 +10,20 @@ variables on ThemeToggle component with the new theme names.
 The name should be the same as the theme name below.
 */
 @plugin "daisyui" {
-    themes: light --default,
-    dark --prefersdark,
-    synthwave,
-    retro,
-    valentine,
-    dim;
+    themes:
+        light --default,
+        dark --prefersdark,
+        synthwave,
+        retro,
+        valentine,
+        dim;
 }
 
-[data-theme="light"] .skill-badge {
+[data-theme='light'] .skill-badge {
     @apply badge-outline;
 }
 
-[data-theme="dark"] .skill-badge {
+[data-theme='dark'] .skill-badge {
     @apply badge-soft;
 }
 

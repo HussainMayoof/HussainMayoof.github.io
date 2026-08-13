@@ -1,9 +1,9 @@
 ---
-title: "Welcome to My Blog"
+title: 'Welcome to My Blog'
 description: "An introduction to my blog where I'll share thoughts on web development, design, and technology."
-image: "@assets/blog/blog_post.jpg"
-publishDate: "2025-10-30"
-tags: ["Introduction", "Web Development"]
+image: '@assets/blog/blog_post.jpg'
+publishDate: '2025-10-30'
+tags: [ 'Introduction', 'Web Development' ]
 ---
 
 # Welcome to My Blog!
@@ -27,6 +27,6 @@ field, I've worked on a variety of projects ranging from small startups to large
 
 ## Let's Connect
 
-I'd love to hear from you! Feel free to reach out through any of my social media channels or send me an email.
+I'd love to hear from you! Feel free to reach out through any of my social media channels or email me.
 
 Thanks for stopping by!

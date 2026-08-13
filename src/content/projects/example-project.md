@@ -21,12 +21,12 @@ sourceLink: https://portal.astro.build/themes/templix-professional-marketplace-t
 ## Features
 
 - 🎯 **Keystatic CMS Integration** - Git-based headless CMS with visual editor, no backend needed
-- ⭐ **Advanced Rating System** - Browser fingerprinting voting with fraud prevention and cooldown
-- 💳 **Multi-Currency Commerce** - Support for USD, BRL, EUR with automatic locale formatting
+- ⭐ **Advanced Rating System** – Browser fingerprinting voting with fraud prevention and cooldown
+- 💳 **Multi-Currency Commerce** – Support for USD, BRL, EUR with automatic locale formatting
 - 🔍 **Advanced Search & Filters** - Real-time search, tag filtering, price filters, sorting, pagination
-- 📢 **Marketing Tools** - Promotional banners with countdown timers, promo codes, 8 color variants
-- 🎨 **Modern Design System** - Tailwind CSS v4, DaisyUI v5, custom themes, dark mode support
-- 📱 **Mobile-First Responsive** - Optimized for all devices and screen sizes
+- 📢 **Marketing Tools** - Promotional banners with countdown timers, promo codes, 8-colour variants
+- 🎨 **Modern Design System** – Tailwind CSS v4, DaisyUI v5, custom themes, dark mode support
+- 📱 **Mobile-First Responsive** – Optimised for all devices and screen sizes
 - 🚀 **Production Ready** - Pre-configured deployment for Cloudflare Pages, Vercel, Netlify
 
 ## Use Cases
@@ -35,7 +35,7 @@ sourceLink: https://portal.astro.build/themes/templix-professional-marketplace-t
 - Digital product store (fonts, graphics, design assets)
 - SaaS template gallery (landing pages, dashboards)
 - Component library showcase
-- Theme directory or catalog
+- Theme directory or catalogue
 
 ## What's Included
 
@@ -49,7 +49,7 @@ sourceLink: https://portal.astro.build/themes/templix-professional-marketplace-t
 - Partner/sponsor showcase
 - FAQ management
 - Lifetime updates via GitHub
-- Commercial use license
+- Commercial use licence
 
 ## Perfect For
 

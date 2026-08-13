@@ -2,11 +2,11 @@
 
 ---
 
-This personal portfolio site was created using Lauro
+This personal portfolio site was created and extended using Lauro
 Guedes' [Bloomfolio Astro Template](https://github.com/lauroguedes/bloomfolio).
 
 ---
 
-The following sections were created by me:
+I changed much of the code formatting, added new Keystatic content, and created the following sections:
 
 - Skills

@@ -1,23 +1,30 @@
 ---
-import {Image} from "astro:assets";
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
     skill: {
-        title: string
-        logo?: ImageMetadata
-        colour: string
+        title: string;
+        logo?: ImageMetadata;
+        colour: string;
     };
 }
 
-const {skill} = Astro.props;
+const { skill } = Astro.props;
 ---
 
-<span class={`skill-badge badge badge-xl ${skill.colour} cursor-pointer duration-100 hover:text-xl hover:p-4`}>
-        {skill.logo &&
-                <Image
-                        src={skill.logo}
-                        alt={skill.title}
-                        class="size-[1em] rounded-xs object-contain"/>}
+<span
+    class={`skill-badge badge badge-xl ${skill.colour} cursor-pointer duration-100 hover:text-xl hover:p-4`}
+>
+    {
+        skill.logo && (
+            <Image
+                src={skill.logo}
+                alt={skill.title}
+                class="size-[1em] rounded-xs object-contain"
+            />
+        )
+    }
 
     {skill.title}
 </span>
