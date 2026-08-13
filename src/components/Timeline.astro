@@ -103,7 +103,7 @@ const entriesWithContent = await Promise.all(
         {
             variant === 'timeline' ? (
                 <>
-                    <ul class="timeline timeline-vertical timeline-snap-icon">
+                    <ul class="timeline timeline-vertical timeline-snap-icon max-md:timeline-compact">
                         {entriesWithContent.map(({ entry }, index) => (
                             <li>
                                 {index > 0 && <hr class="bg-base-100" />}
@@ -113,7 +113,7 @@ const entriesWithContent = await Promise.all(
                                     />
                                 </div>
                                 <div
-                                    class={`timeline-${index % 2 === 0 ? 'start' : 'end'} max-w-2xs pt-3 mb-10`}
+                                    class={`max-md:timeline-end ${index % 2 === 0 ? 'timeline-start' : 'timeline-end'} max-w-2xs pt-3 mb-10`}
                                 >
                                     <time
                                         class={`font-mono text-sm text-base-content/70 block italic ${index % 2 === 0 ? 'text-end' : ''}`}
@@ -291,11 +291,11 @@ const entriesWithContent = await Promise.all(
                     {entriesWithContent.map(({ entry, Content }) => (
                         <li class="border-b hover:opacity-85 transition-opacity border-base-300">
                             <details class="collapse">
-                                <summary class="collapse-title pe-5">
-                                    <span class="list-row p-0 items-center after:hidden">
-                                        <span>
-                                            {entry.data.logo && (
-                                                <div class="avatar">
+                                <summary class="collapse-title p-3 sm:pe-5 sm:p-4">
+                                    <span class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                                        {entry.data.logo && (
+                                            <div class="flex items-center gap-3 sm:contents">
+                                                <div class="avatar shrink-0">
                                                     <div class="w-10 mask mask-squircle">
                                                         <Image
                                                             src={
@@ -308,21 +308,34 @@ const entriesWithContent = await Promise.all(
                                                         />
                                                     </div>
                                                 </div>
-                                            )}
-                                        </span>
 
-                                        <span>
-                                            <span class="font-bold text-lg">
+                                                {/* Title/subtitle inline with logo on mobile */}
+                                                <div class="flex flex-col min-w-0 sm:hidden">
+                                                    <span class="font-bold text-base wrap-break-word">
+                                                        {entry.data.title}
+                                                    </span>
+                                                    <span
+                                                        class={`text-${color} font-semibold text-sm wrap-break-word`}
+                                                    >
+                                                        {entry.data.subtitle}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {/* Title/subtitle for sm+ (separate column) */}
+                                        <span class="hidden sm:flex sm:flex-col min-w-0">
+                                            <span class="font-bold text-lg wrap-break-word">
                                                 {entry.data.title}
                                             </span>
                                             <span
-                                                class={`text-${color} font-semibold text-sm`}
+                                                class={`text-${color} font-semibold text-sm wrap-break-word`}
                                             >
                                                 {entry.data.subtitle}
                                             </span>
                                         </span>
 
-                                        <span class="text-sm text-base-content/70 font-mono whitespace-nowrap">
+                                        <span class="text-xs sm:text-sm text-base-content/70 font-mono sm:whitespace-nowrap sm:ml-auto">
                                             {formatPeriod(
                                                 entry.data.startDate,
                                                 entry.data.endDate
@@ -347,11 +360,11 @@ const entriesWithContent = await Promise.all(
                                         <Content />
                                     </div>
                                     {entry.data.link && (
-                                        <div class="flex justify-end">
+                                        <div class="flex justify-end mt-2">
                                             <a
                                                 href={entry.data.link}
                                                 target="_blank"
-                                                class="link link-hover"
+                                                class="link link-hover text-sm"
                                             >
                                                 {collection === 'work'
                                                     ? 'View Company'

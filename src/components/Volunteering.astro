@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import SkillBadge from './SkillBadge.astro';
 import { Image } from 'astro:assets';
 
 const volunteeringEntries = await getCollection('volunteering');
@@ -41,10 +40,10 @@ const formatPeriod = (startDate: Date, endDate?: Date) => {
                 {
                     sortedVolunteering.map((volunteering) => (
                         <li class="border-b p-4 hover:opacity-85 transition-opacity border-base-300">
-                            <div class="list-row p-0 gap-6 items-center after:hidden">
-                                <div>
+                            <div class="list-row flex flex-col sm:flex-row p-0 gap-3 sm:gap-6 sm:items-center after:hidden">
+                                <div class="flex items-center gap-3 sm:contents">
                                     {volunteering.data.logo && (
-                                        <div class="avatar">
+                                        <div class="avatar shrink-0">
                                             <div class="w-10 mask mask-squircle">
                                                 <Image
                                                     src={volunteering.data.logo}
@@ -56,17 +55,21 @@ const formatPeriod = (startDate: Date, endDate?: Date) => {
                                             </div>
                                         </div>
                                     )}
+
+                                    <p class="font-bold text-lg sm:hidden wrap-break-word">
+                                        {volunteering.data.title}
+                                    </p>
                                 </div>
 
-                                <div class="flex flex-col gap-2">
-                                    <div>
-                                        <p class="font-bold text-lg">
+                                <div class="flex flex-col gap-2 min-w-0 flex-1">
+                                    <div class="hidden sm:block">
+                                        <p class="font-bold text-lg wrap-break-word">
                                             {volunteering.data.title}
                                         </p>
                                     </div>
 
                                     <div>
-                                        <p class="font-semibold text-md">
+                                        <p class="font-semibold text-md wrap-break-word">
                                             {volunteering.data
                                                 .organisationLink ? (
                                                 <a
@@ -94,12 +97,12 @@ const formatPeriod = (startDate: Date, endDate?: Date) => {
                                         </p>
                                     </div>
 
-                                    <div class="text-sm">
+                                    <div class="text-sm wrap-break-word">
                                         {volunteering.data.description}
                                     </div>
                                 </div>
 
-                                <div class="text-sm text-base-content/70 font-mono whitespace-nowrap">
+                                <div class="text-sm text-base-content/70 font-mono whitespace-nowrap sm:text-right">
                                     {formatPeriod(
                                         volunteering.data.startDate,
                                         volunteering.data.endDate
