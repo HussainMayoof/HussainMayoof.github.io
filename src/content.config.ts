@@ -202,20 +202,6 @@ const volunteering = defineCollection({
         }),
 });
 
-// About singleton
-const about = defineCollection({
-    loader: glob({
-        pattern: '**/*.{md,mdoc,yaml}',
-        base: './src/content/about',
-    }),
-    schema: ({ image }) =>
-        z.object({
-            title: z.string(),
-            photo: image().optional(),
-            link: z.url().optional(),
-        }),
-});
-
 // General singleton
 const general = defineCollection({
     loader: glob({
@@ -247,7 +233,6 @@ const general = defineCollection({
                     .default('both'),
             })
         ),
-        showAboutSection: z.boolean(),
         showProjectsSection: z.boolean(),
         showBlogSection: z.boolean(),
         showWorkSection: z.boolean(),
@@ -287,7 +272,6 @@ export const collections = {
     skills,
     certificates,
     volunteering,
-    about,
     general,
     contact,
 };

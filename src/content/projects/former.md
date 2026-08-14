@@ -3,7 +3,7 @@ featured: true
 category: real-projects
 title: Former
 description: >-
-  A social media app built with Express.js and React ran in Docker containers
+  A social media app built with Express.js and React ran in Docker containers
   and using modern web technologies.
 image: '@assets/projects/former/image.png'
 startDate: 2026-05-25
@@ -13,6 +13,7 @@ skills:
   - React
   - Docker
   - GitHub Actions
+  - Heroku
   - Node.js
   - Prisma
   - PostgreSQL
@@ -22,7 +23,10 @@ skills:
 demoLink: https://former.hussainmayoof.com/
 sourceLink: https://github.com/HussainMayoof/Former
 ---
-This work in progress full stack project is intended to be a culmination of all my web development skills so far, and includes as many technologies as I can use. I intend to continue to expand this further until I am satisfied with its progress.
+
+This work-in-progress full stack project is intended to be a culmination of all my web development skills so far and
+includes as many technologies as I can use. I intend to continue to expand this further until I am satisfied with its
+progress.
 
 ---
 
