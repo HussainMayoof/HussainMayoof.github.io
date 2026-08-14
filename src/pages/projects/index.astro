@@ -2,9 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, getEntry } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import ProjectsLayoutGrid from '../../components/ProjectsLayoutGrid.astro';
-import ProjectsLayoutTabsHorizontal from '../../components/ProjectsLayoutTabsHorizontal.astro';
-import ProjectsLayoutTabsVertical from '../../components/ProjectsLayoutTabsVertical.astro';
+import ProjectsLayoutGrid from '../../components/Projects/ProjectsLayoutGrid.astro';
+import ProjectsLayoutTabsHorizontal from '../../components/Projects/ProjectsLayoutTabsHorizontal.astro';
+import ProjectsLayoutTabsVertical from '../../components/Projects/ProjectsLayoutTabsVertical.astro';
 
 const projects = await getCollection('projects');
 const categories = await getCollection('projectCategories');

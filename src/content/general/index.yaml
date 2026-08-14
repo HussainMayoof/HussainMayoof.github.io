@@ -1,7 +1,11 @@
 projectsLayout: grid
 enableThemeSelector: false
-extraLinksEnabled: false
-extraLinks: [ ]
+extraLinksEnabled: true
+extraLinks:
+  - link: https://www.google.com
+    icon: Link
+    label: Google
+    displayOn: both
 showSkillsSection: true
 showProjectsSection: true
 showBlogSection: false

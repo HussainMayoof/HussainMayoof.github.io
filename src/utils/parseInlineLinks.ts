@@ -2,7 +2,7 @@
  * Parses inline link syntax [link:<url>]text[/link] and returns HTML string.
  *
  * Example:
- *   Input:  "Built with [link:https://daisyui.com]🌼 DaisyUI[/link] and Astro"
+ *   Input: "Built with [link:https://daisyui.com]🌼 DaisyUI[/link] and Astro"
  *   Output: "Built with <a href=\"https://daisyui.com\" class=\"link link-primary\" target=\"_blank\" rel=\"noopener noreferrer\">🌼 DaisyUI</a> and Astro"
  *
  * Text without link syntax is returned as HTML-escaped plain text.
