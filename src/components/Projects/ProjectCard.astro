@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import SkillBadge from '../SkillBadge.astro';
 import { ExternalLink, Eye } from '@lucide/astro';
 import type { CollectionEntry } from 'astro:content';
+import { formatPeriod } from '../../utils/entryHelper.ts';
 
 interface Props {
     project: CollectionEntry<'projects'>;
@@ -10,18 +11,6 @@ interface Props {
 }
 
 const { project, categoryLabel } = Astro.props;
-
-function formatPeriod(startDate: Date, endDate?: Date) {
-    const options: Intl.DateTimeFormatOptions = {
-        month: 'short',
-        year: 'numeric',
-    };
-    const start = startDate.toLocaleDateString('en-US', options);
-    const end = endDate
-        ? endDate.toLocaleDateString('en-US', options)
-        : 'Present';
-    return `${start} - ${end}`;
-}
 ---
 
 <article class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">

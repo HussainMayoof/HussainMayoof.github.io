@@ -1,13 +1,15 @@
 ---
 import { getCollection } from 'astro:content';
 import ProjectCard from './ProjectCard.astro';
+import { sortEntriesByTime } from '../../utils/entryHelper.ts';
 
 const projectEntries = await getCollection('projects');
 
-// Filter featured projects, sort by start date (most recent first), limit to 3
-const featuredProjects = projectEntries
+const sortedProjects = sortEntriesByTime(projectEntries, 'startDate');
+
+// Filter featured projects, limit to 3
+const featuredProjects = sortedProjects
     .filter((project) => project.data.featured)
-    .sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime())
     .slice(0, 3);
 ---
 

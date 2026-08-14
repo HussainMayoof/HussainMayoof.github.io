@@ -2,24 +2,24 @@ title: Fullstack Open
 organisation: University of Helsinki
 organisationLink: https://www.helsinki.fi/en
 description: >-
-  A comprehensive JavaScript-based fullstack course that covers all the
-  essentials of web development.
+    A comprehensive JavaScript-based fullstack course that covers all the
+    essentials of web development.
 date: 2026-01-28
 logo: '@assets/certficates/fullstack-open/logo.png'
 certificateLink: >-
-  https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/75be18c0750cf132d9033eedcd701ffb
+    https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/75be18c0750cf132d9033eedcd701ffb
 courseLink: https://fullstackopen.com/en/
 skills:
-  - JavaScript
-  - TypeScript
-  - React
-  - Node.js
-  - Express.js
-  - MongoDB
-  - Redux
-  - GraphQL
-  - React Native
-  - CI/CD
-  - Docker
-  - PostgreSQL
-  - Next.js
+    - JavaScript
+    - TypeScript
+    - React
+    - Node.js
+    - Express.js
+    - MongoDB
+    - Redux
+    - GraphQL
+    - React Native
+    - CI/CD
+    - Docker
+    - PostgreSQL
+    - Next.js

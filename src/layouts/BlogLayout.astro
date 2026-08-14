@@ -16,13 +16,13 @@ interface Props {
 const { title, description, publishDate, updatedDate, image, tags } =
     Astro.props;
 
-function formatDate(date: Date) {
-    return date.toLocaleDateString('en-US', {
+const formatDate = (date: Date) => {
+    return date.toLocaleDateString('en-UK', {
         month: 'long',
         day: 'numeric',
         year: 'numeric',
     });
-}
+};
 
 // Calculate reading time (rough estimate based on word count)
 const content = await Astro.slots.render('default');

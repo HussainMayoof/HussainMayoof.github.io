@@ -3,14 +3,14 @@ import { getCollection, render } from 'astro:content';
 import ProjectLayout from '../../layouts/ProjectLayout.astro';
 
 // Create a getStaticPaths function that defines the slug for each page
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
     const projects = await getCollection('projects');
 
     return projects.map((entry) => ({
         params: { slug: entry.id },
         props: { entry },
     }));
-}
+};
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);

@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import SkillBadge from '../components/SkillBadge.astro';
 import { ExternalLink } from '@lucide/astro';
 import { type ImageMetadata } from 'astro';
+import { calculateDuration, formatPeriod } from '../utils/entryHelper.ts';
 
 interface Props {
     title: string;
@@ -26,36 +27,6 @@ const {
     demoLink,
     sourceLink,
 } = Astro.props;
-
-function formatPeriod(startDate: Date, endDate?: Date) {
-    const options: Intl.DateTimeFormatOptions = {
-        month: 'short',
-        year: 'numeric',
-    };
-    const start = startDate.toLocaleDateString('en-US', options);
-    const end = endDate
-        ? endDate.toLocaleDateString('en-US', options)
-        : 'Present';
-    return `${start} - ${end}`;
-}
-
-// Calculate project duration
-function calculateDuration(startDate: Date, endDate?: Date) {
-    const end = endDate || new Date();
-    const months =
-        (end.getFullYear() - startDate.getFullYear()) * 12 +
-        (end.getMonth() - startDate.getMonth());
-
-    if (months < 1) return 'Less than a month';
-    if (months === 1) return '1 month';
-    if (months < 12) return `${months} months`;
-
-    const years = Math.floor(months / 12);
-    const remainingMonths = months % 12;
-
-    if (remainingMonths === 0) return years === 1 ? '1 year' : `${years} years`;
-    return `${years} year${years > 1 ? 's' : ''}, ${remainingMonths} month${remainingMonths > 1 ? 's' : ''}`;
-}
 ---
 
 <Layout title={title} description={description}>

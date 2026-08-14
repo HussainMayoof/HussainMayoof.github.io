@@ -2,10 +2,10 @@ projectsLayout: grid
 enableThemeSelector: false
 extraLinksEnabled: false
 extraLinks:
-  - link: https://www.google.com
-    icon: Link
-    label: Google
-    displayOn: both
+    - link: https://www.google.com
+      icon: Link
+      label: Google
+      displayOn: both
 showSkillsSection: true
 showProjectsSection: true
 showBlogSection: false

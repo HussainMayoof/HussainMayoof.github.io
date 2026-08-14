@@ -4,7 +4,6 @@ import {
     FileText,
     CodeXml,
     Mail,
-    Home,
     User,
     Briefcase,
     GraduationCap,
@@ -40,7 +39,6 @@ export type IconName =
     | 'FileText'
     | 'CodeXml'
     | 'Mail'
-    | 'Home'
     | 'User'
     | 'Briefcase'
     | 'GraduationCap'
@@ -73,7 +71,6 @@ export const iconMap: Record<IconName, AstroComponentFactory> = {
     FileText,
     CodeXml,
     Mail,
-    Home,
     User,
     Briefcase,
     GraduationCap,
@@ -101,6 +98,6 @@ export const iconMap: Record<IconName, AstroComponentFactory> = {
     Email: Mail,
 };
 
-export function getIcon(iconName: IconName) {
+export const getIcon = (iconName: IconName) => {
     return iconMap[iconName];
-}
+};

@@ -39,7 +39,7 @@ const themes = [
 
 <script is:inline>
     // Set theme on page load based on localStorage or system preference
-    function setTheme() {
+    const setTheme = () => {
         let theme = localStorage.getItem('theme');
 
         // If no saved theme, use system preference
@@ -59,7 +59,7 @@ const themes = [
         radios.forEach((radio) => {
             radio.checked = radio.value === theme;
         });
-    }
+    };
 
     // Update theme when radio button is changed
     document.addEventListener('change', (e) => {

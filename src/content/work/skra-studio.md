@@ -7,9 +7,9 @@ endDate: 2026-08-28
 logo: '@assets/work/skra-studio/logo.jpg'
 link: https://skrastudio.com/
 skills:
-  - Unreal Engine 5
-  - Diversion
-  - Teamwork
+    - Unreal Engine 5
+    - Diversion
+    - Teamwork
 ---
 
 I created two minigames (both 2D and 3D) in **Unreal Engine 5** for the upcoming Sindbad game developed by the studio in

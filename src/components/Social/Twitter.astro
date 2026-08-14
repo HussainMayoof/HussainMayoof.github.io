@@ -42,7 +42,7 @@ const tweetUrl = `https://twitter.com/${tweetUsername}/status/${tweetId}`;
 <script is:inline>
     // Load Twitter embed script if not already loaded
     if (!window.twttr) {
-        window.twttr = (function (d, s, id) {
+        window.twttr = ((d, s, id) => {
             const fjs = d.getElementsByTagName(s)[0];
             const t = window.twttr || {};
             if (d.getElementById(id)) return t;
@@ -52,7 +52,7 @@ const tweetUrl = `https://twitter.com/${tweetUsername}/status/${tweetId}`;
             fjs.parentNode.insertBefore(js, fjs);
 
             t._e = [];
-            t.ready = function (f) {
+            t.ready = (f) => {
                 t._e.push(f);
             };
 

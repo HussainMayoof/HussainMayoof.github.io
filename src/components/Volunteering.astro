@@ -1,28 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
+import { formatPeriod, sortEntriesByTime } from '../utils/entryHelper.ts';
 
 const volunteeringEntries = await getCollection('volunteering');
 
-// Sort by start date, most recent first
-const sortedVolunteering = volunteeringEntries.sort(
-    (a, b) => b.data.startDate.getTime() - a.data.startDate.getTime()
-);
-
-const formatPeriod = (startDate: Date, endDate?: Date) => {
-    const options: Intl.DateTimeFormatOptions = {
-        month: 'short',
-        year: 'numeric',
-    };
-    const start = startDate.toLocaleDateString('en-US', options);
-
-    if (endDate && endDate.getTime() !== startDate.getTime()) {
-        const end = endDate.toLocaleDateString('en-US', options);
-        return `${start} - ${end}`;
-    }
-
-    return `${start} - Present`;
-};
+const sortedVolunteering = sortEntriesByTime(volunteeringEntries, 'startDate');
 ---
 
 <section id="volunteering" class="py-20 px-4 bg-base-200">

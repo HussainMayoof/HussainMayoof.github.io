@@ -21,14 +21,19 @@ export const sortEntriesByTime = <T extends Entry, F extends keyof T['data']>(
 };
 
 // Format a date range as "MMM YYYY - MMM YYYY"
-export const formatPeriod = (startDate: Date, endDate?: Date) => {
+export const formatPeriod = (
+    startDate: Date,
+    endDate?: Date,
+    includeDay: boolean = false
+) => {
     const options: Intl.DateTimeFormatOptions = {
         month: 'short',
+        day: includeDay ? 'numeric' : undefined,
         year: 'numeric',
     };
-    const start = startDate.toLocaleDateString('en-US', options);
+    const start = startDate.toLocaleDateString('en-UK', options);
     const end = endDate
-        ? endDate.toLocaleDateString('en-US', options)
+        ? endDate.toLocaleDateString('en-UK', options)
         : 'Present';
     return `${start} - ${end}`;
 };

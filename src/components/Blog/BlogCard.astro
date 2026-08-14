@@ -8,14 +8,14 @@ interface Props {
 
 const { post } = Astro.props;
 
-function formatDate(date: Date) {
+const formatDate = (date: Date) => {
     const options: Intl.DateTimeFormatOptions = {
         month: 'long',
         day: 'numeric',
         year: 'numeric',
     };
-    return date.toLocaleDateString('en-US', options);
-}
+    return date.toLocaleDateString('en-UK', options);
+};
 ---
 
 <div class="card image-full shadow-xl hover:shadow-2xl transition-shadow">

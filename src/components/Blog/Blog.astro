@@ -2,13 +2,11 @@
 import { getCollection } from 'astro:content';
 import BlogCard from './BlogCard.astro';
 import { ArrowRight } from '@lucide/astro';
+import { sortEntriesByTime } from '../../utils/entryHelper.ts';
 
 const blogEntries = await getCollection('blog');
 
-// Sort by publication date, most recent first
-const sortedPosts = blogEntries.sort(
-    (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
-);
+const sortedPosts = sortEntriesByTime(blogEntries, 'publishDate');
 
 // Get only the latest 3 posts
 const latestPosts = sortedPosts.slice(0, 3);

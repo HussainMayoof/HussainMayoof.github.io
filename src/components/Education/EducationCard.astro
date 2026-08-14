@@ -8,6 +8,7 @@ const { entryData, Content } = Astro.props;
 <li class="border-b hover:opacity-85 transition-opacity border-base-300">
     <div class="collapse collapse-plus duration-200">
         <input id="collapse" type="checkbox" class="peer" />
+        <label for="collapse" class="hidden"></label>
 
         <div class="collapse-title p-3 sm:pt-6 sm:pe-5 sm:p-4">
             <div
@@ -26,14 +27,12 @@ const { entryData, Content } = Astro.props;
                                 </div>
                             </div>
 
-                            <!--Title/subtitle inline with logo on mobile-->
+                            {/* Title/subtitle inline with logo on mobile */}
                             <div class="flex flex-col min-w-0 sm:hidden">
                                 <div class="font-bold text-base wrap-break-word">
                                     {entryData.title}
                                 </div>
-                                <div
-                                    class="text-neutral-content font-semibold text-sm wrap-break-word"
-                                >
+                                <div class="text-neutral-content font-semibold text-sm wrap-break-word">
                                     {entryData.subtitle}
                                 </div>
                             </div>
@@ -41,7 +40,7 @@ const { entryData, Content } = Astro.props;
                     )
                 }
 
-                <!--Title/subtitle for sm+ (separate column)-->
+                {/*  Title/subtitle for sm+ (separate column) */}
                 <span class="hidden sm:flex sm:flex-col min-w-0">
                     <span class="font-bold text-lg wrap-break-word">
                         {entryData.title}
