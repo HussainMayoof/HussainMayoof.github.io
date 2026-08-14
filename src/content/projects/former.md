@@ -32,7 +32,7 @@ progress.
 
 ## To Do List
 
-This is a list of
+This is a list of planned features for the project:
 
 - Show comments on posts
 - Allow comment creation

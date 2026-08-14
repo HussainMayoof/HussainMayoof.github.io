@@ -1,0 +1,114 @@
+---
+import { Image } from 'astro:assets';
+import SkillBadge from '../SkillBadge.astro';
+
+const { certificate, collapsed } = Astro.props;
+
+const formatDate = (date: Date) => {
+    const options: Intl.DateTimeFormatOptions = {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+    };
+    return date.toLocaleDateString('en-UK', options);
+};
+---
+
+<div
+    class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow certificate-card"
+    class:list={[{ 'certificate-collapsed': collapsed }]}
+>
+    <div class="card-body">
+        <div class="flex items-start gap-4">
+            {
+                certificate.data.logo && (
+                    <div class="avatar shrink-0">
+                        <div class="w-16 h-16 rounded">
+                            <Image
+                                src={certificate.data.logo}
+                                alt={certificate.data.title}
+                            />
+                        </div>
+                    </div>
+                )
+            }
+
+            <div class="flex-1">
+                <time class="text-sm text-base-content/60">
+                    {formatDate(certificate.data.date)}
+                </time>
+
+                <h3 class="card-title mt-1">
+                    {certificate.data.title}
+                </h3>
+
+                <p class="text-sm text-primary font-semibold">
+                    {
+                        certificate.data.organisationLink ? (
+                            <a
+                                href={certificate.data.organisationLink}
+                                class="link-hover"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {certificate.data.organisation}
+                            </a>
+                        ) : (
+                            <span>{certificate.data.organisation}</span>
+                        )
+                    }
+                </p>
+
+                {
+                    'skills' in certificate.data &&
+                        certificate.data.skills &&
+                        certificate.data.skills.length > 0 && (
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                {certificate.data.skills.map(
+                                    (skill: string) => (
+                                        <SkillBadge skill={skill} />
+                                    )
+                                )}
+                            </div>
+                        )
+                }
+
+                <p class="text-base-content/80 mt-3">
+                    {certificate.data.description}
+                </p>
+
+                <div class="flex flex-col sm:flex-row sm:gap-4">
+                    {
+                        certificate.data.certificateLink && (
+                            <div class="card-actions mt-4">
+                                <a
+                                    href={certificate.data.certificateLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="btn btn-sm btn-primary"
+                                >
+                                    View Certificate
+                                </a>
+                            </div>
+                        )
+                    }
+
+                    {
+                        certificate.data.courseLink && (
+                            <div class="card-actions mt-4">
+                                <a
+                                    href={certificate.data.courseLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="btn btn-sm btn-outline btn-primary"
+                                >
+                                    View Course
+                                </a>
+                            </div>
+                        )
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
