@@ -173,6 +173,10 @@ export default config({
                             'Links to display in the floating action button',
                     }
                 ),
+                showSkillsSection: fields.checkbox({
+                    label: 'Show Skills Section',
+                    defaultValue: true,
+                }),
                 showProjectsSection: fields.checkbox({
                     label: 'Show Projects Section',
                     defaultValue: true,
@@ -189,8 +193,16 @@ export default config({
                     label: 'Show Education Section',
                     defaultValue: true,
                 }),
+                showCertificatesSection: fields.checkbox({
+                    label: 'Show Certificates Section',
+                    defaultValue: true,
+                }),
                 showHackathonsSection: fields.checkbox({
                     label: 'Show Hackathons Section',
+                    defaultValue: true,
+                }),
+                showVolunteeringSection: fields.checkbox({
+                    label: 'Show Volunteering Section',
                     defaultValue: true,
                 }),
                 showContactSection: fields.checkbox({

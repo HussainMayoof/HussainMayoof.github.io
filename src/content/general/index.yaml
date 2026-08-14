@@ -2,9 +2,12 @@ projectsLayout: grid
 enableThemeSelector: false
 extraLinksEnabled: false
 extraLinks: [ ]
+showSkillsSection: true
 showProjectsSection: true
 showBlogSection: false
 showWorkSection: true
 showEducationSection: true
+showCertificatesSection: true
 showHackathonsSection: false
+showVolunteeringSection: true
 showContactSection: true

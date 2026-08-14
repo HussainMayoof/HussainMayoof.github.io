@@ -233,11 +233,14 @@ const general = defineCollection({
                     .default('both'),
             })
         ),
+        showSkillsSection: z.boolean(),
         showProjectsSection: z.boolean(),
         showBlogSection: z.boolean(),
         showWorkSection: z.boolean(),
         showEducationSection: z.boolean(),
+        showCertificatesSection: z.boolean(),
         showHackathonsSection: z.boolean(),
+        showVolunteeringSection: z.boolean(),
         showContactSection: z.boolean(),
         projectsLayout: z
             .enum(['grid', 'tabs-horizontal', 'tabs-vertical'])

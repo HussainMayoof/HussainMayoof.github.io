@@ -34,53 +34,53 @@ const general = generalEntry.data;
         <!-- Hero Section (Always visible) -->
         <Hero hero={heroEntry.data} />
 
-        <!-- All other sections hidden on mobile -->
-        <div class="">
-            <Skills />
+        <!-- Skills Section -->
+        {general.showSkillsSection && <Skills />}
 
-            <!-- Projects Section -->
-            {general.showProjectsSection && <Projects />}
+        <!-- Projects Section -->
+        {general.showProjectsSection && <Projects />}
 
-            <!-- Blog Section -->
-            {general.showBlogSection && <Blog />}
+        <!-- Blog Section -->
+        {general.showBlogSection && <Blog />}
 
-            <!-- Work Experience Section -->
-            {
-                general.showWorkSection && (
-                    <Timeline
-                        collection="work"
-                        variant="timeline"
-                        color="primary"
-                        backgroundColor="base-300"
-                        icon={Briefcase}
-                        sectionTitle="Work Experience"
-                    />
-                )
-            }
+        <!-- Work Experience Section -->
+        {
+            general.showWorkSection && (
+                <Timeline
+                    collection="work"
+                    variant="timeline"
+                    color="primary"
+                    backgroundColor="base-300"
+                    icon={Briefcase}
+                    sectionTitle="Work Experience"
+                />
+            )
+        }
 
-            <!-- Education Section -->
-            {
-                general.showEducationSection && (
-                    <Timeline
-                        collection="education"
-                        variant="list"
-                        color="secondary"
-                        backgroundColor="base-200"
-                        icon={GraduationCap}
-                        sectionTitle="Education"
-                    />
-                )
-            }
+        <!-- Education Section -->
+        {
+            general.showEducationSection && (
+                <Timeline
+                    collection="education"
+                    variant="list"
+                    color="secondary"
+                    backgroundColor="base-200"
+                    icon={GraduationCap}
+                    sectionTitle="Education"
+                />
+            )
+        }
 
-            <!-- Hackathons Section -->
-            {general.showHackathonsSection && <Hackathons />}
+        <!-- Certificates Section -->
+        {general.showCertificatesSection && <Certificates />}
 
-            <Certificates />
+        <!-- Hackathons Section -->
+        {general.showHackathonsSection && <Hackathons />}
 
-            <Volunteering />
+        <!-- Volunteering Section -->
+        {general.showVolunteeringSection && <Volunteering />}
 
-            <!-- Contact Section -->
-            {general.showContactSection && <Contact />}
-        </div>
+        <!-- Contact Section -->
+        {general.showContactSection && <Contact />}
     </main>
 </Layout>
