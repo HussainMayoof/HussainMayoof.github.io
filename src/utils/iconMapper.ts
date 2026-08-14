@@ -26,12 +26,12 @@ import {
 } from '@lucide/astro';
 
 // Social media icon components
-import GitHub from '../components/icons/GitHub.astro';
-import LinkedIn from '../components/icons/LinkedIn.astro';
-import Twitter from '../components/icons/Twitter.astro';
-import Bluesky from '../components/icons/Bluesky.astro';
-import Instagram from '../components/icons/Instagram.astro';
-import YouTube from '../components/icons/YouTube.astro';
+import GitHub from '../components/Icons/GitHub.astro';
+import LinkedIn from '../components/Icons/LinkedIn.astro';
+import Twitter from '../components/Icons/Twitter.astro';
+import Bluesky from '../components/Icons/Bluesky.astro';
+import Instagram from '../components/Icons/Instagram.astro';
+import YouTube from '../components/Icons/YouTube.astro';
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 
 export type IconName =

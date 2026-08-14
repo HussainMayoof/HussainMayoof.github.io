@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import {
+    sortEntriesByTime,
+    getEntriesWithContent,
+} from '../../utils/entryHelper.ts';
+import WorkCard from './WorkCard.astro';
+import WorkModal from './WorkModal.astro';
+
+// Load work entries
+const workEntries = await getCollection('work');
+
+const sortedWorkEntries = sortEntriesByTime(workEntries, 'startDate');
+const entriesWithContent = await Promise.all(
+    getEntriesWithContent(sortedWorkEntries)
+);
+---
+
+<section id="work" class={`py-20 px-4 bg-base-300`}>
+    <div class="mx-auto max-w-4xl">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold">Work Experience</h2>
+        </div>
+
+        <!-- Work Cards -->
+        <ul
+            class="timeline timeline-vertical timeline-snap-icon max-md:timeline-compact"
+        >
+            {
+                entriesWithContent.map(({ entry }, index) => (
+                    <WorkCard entry={entry} index={index} />
+                ))
+            }
+        </ul>
+
+        <!-- Modals for each work card-->
+        {
+            entriesWithContent.map(({ entry, Content }) => (
+                <WorkModal entry={entry} Content={Content} />
+            ))
+        }
+    </div>
+</section>

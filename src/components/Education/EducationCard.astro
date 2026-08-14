@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets';
+import { calculateDuration, formatPeriod } from '../../utils/entryHelper.ts';
+
+const { entryData, Content } = Astro.props;
+---
+
+<li class="border-b hover:opacity-85 transition-opacity border-base-300">
+    <div class="collapse collapse-plus duration-200">
+        <input id="collapse" type="checkbox" class="peer" />
+
+        <div class="collapse-title p-3 sm:pt-6 sm:pe-5 sm:p-4">
+            <div
+                class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4"
+            >
+                {
+                    'logo' in entryData && entryData.logo && (
+                        <div class="flex items-center gap-3 sm:contents">
+                            <div class="avatar shrink-0">
+                                <div class="w-10 mask mask-squircle">
+                                    <Image
+                                        src={entryData.logo}
+                                        alt={entryData.title}
+                                        inferSize={true}
+                                    />
+                                </div>
+                            </div>
+
+                            <!--Title/subtitle inline with logo on mobile-->
+                            <div class="flex flex-col min-w-0 sm:hidden">
+                                <div class="font-bold text-base wrap-break-word">
+                                    {entryData.title}
+                                </div>
+                                <div
+                                    class="text-neutral-content font-semibold text-sm wrap-break-word"
+                                >
+                                    {entryData.subtitle}
+                                </div>
+                            </div>
+                        </div>
+                    )
+                }
+
+                <!--Title/subtitle for sm+ (separate column)-->
+                <span class="hidden sm:flex sm:flex-col min-w-0">
+                    <span class="font-bold text-lg wrap-break-word">
+                        {entryData.title}
+                    </span>
+                    <span
+                        class="text-neutral-content font-semibold text-sm wrap-break-word"
+                    >
+                        {entryData.subtitle}
+                    </span>
+                </span>
+
+                <div
+                    class="text-xs text-center sm:text-sm text-base-content/70 font-mono sm:whitespace-nowrap sm:ml-auto"
+                >
+                    {formatPeriod(entryData.startDate, entryData.endDate)}
+                    <span class="ml-1 text-base-content/50">
+                        {
+                            calculateDuration(
+                                entryData.startDate,
+                                entryData.endDate,
+                                true
+                            )
+                        }
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapse-content duration-250">
+            <div class="prose prose-sm max-w-none">
+                <Content />
+            </div>
+            {
+                entryData.link && (
+                    <div class="flex justify-end mt-2">
+                        <a
+                            href={entryData.link}
+                            target="_blank"
+                            class="link link-hover text-sm"
+                        >
+                            View Institution
+                        </a>
+                    </div>
+                )
+            }
+        </div>
+    </div>
+</li>

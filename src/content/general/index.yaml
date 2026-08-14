@@ -1,6 +1,6 @@
 projectsLayout: grid
 enableThemeSelector: false
-extraLinksEnabled: true
+extraLinksEnabled: false
 extraLinks:
   - link: https://www.google.com
     icon: Link
