@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import SkillBadge from './SkillBadge.astro';
 
 const certificateEntries = await getCollection('certificates');
@@ -41,8 +42,8 @@ const formatDate = (date: Date) => {
                                 {certificate.data.logo && (
                                     <div class="avatar shrink-0">
                                         <div class="w-16 h-16 rounded">
-                                            <img
-                                                src={certificate.data.logo.src}
+                                            <Image
+                                                src={certificate.data.logo}
                                                 alt={certificate.data.title}
                                             />
                                         </div>
