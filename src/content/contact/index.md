@@ -1,7 +1,7 @@
 ---
 icon: Mail
 footerIcon: Pickaxe
-footerText: 'Hussain Mayoof '
+footerText: 'Hussain Mayoof'
 footerLinkText: Created using Lauro Guedes' Astro template
 footerLinkUrl: https://github.com/lauroguedes/bloomfolio
 ---
