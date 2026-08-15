@@ -33,9 +33,9 @@ const { project, categoryLabel } = Astro.props;
             <a href={`/projects/${project.id}`}>{project.data.title}</a>
         </h3>
         <div class="flex items-center gap-2 flex-wrap">
-            <time class="text-sm text-base-content/60">
+            <span class="text-sm text-base-content/60">
                 {formatPeriod(project.data.startDate, project.data.endDate)}
-            </time>
+            </span>
             {
                 categoryLabel && (
                     <span class="badge badge-outline badge-sm">
