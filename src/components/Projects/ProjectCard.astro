@@ -18,7 +18,7 @@ const { project, categoryLabel } = Astro.props;
         class="hover:opacity-80 transition-opacity"
         href={`/projects/${project.id}`}
     >
-        <figure class="aspect-video">
+        <figure class="aspect-video" aria-label={`${project.data.title} Image`}>
             <Image
                 src={project.data.image}
                 alt={project.data.title}
