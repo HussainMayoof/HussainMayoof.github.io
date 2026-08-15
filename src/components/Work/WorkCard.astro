@@ -15,12 +15,12 @@ const { entry, index } = Astro.props;
     <div
         class={`max-md:timeline-end ${index % 2 === 0 ? 'timeline-start' : 'timeline-end'} max-w-2xs pt-3 mb-10`}
     >
-        <time
+        <span
             class={`font-mono text-sm text-base-content/70 block italic ${index % 2 === 0 ? 'text-end' : ''}`}
         >
             {formatPeriod(entry.data.startDate, entry.data.endDate)}
             {
-                calculateDuration(entry.data.startDate, entry.data.endDate) && (
+                (
                     <span class="ml-1 text-base-content/50">
                         {calculateDuration(
                             entry.data.startDate,
@@ -29,7 +29,7 @@ const { entry, index } = Astro.props;
                     </span>
                 )
             }
-        </time>
+        </span>
 
         <div class="card bg-base-100 shadow-xl mt-2">
             <div class="card-body">
