@@ -7,6 +7,8 @@ import {
 import WorkCard from './WorkCard.astro';
 import WorkModal from './WorkModal.astro';
 
+const { background } = Astro.props;
+
 // Load work entries
 const workEntries = await getCollection('work');
 
@@ -16,7 +18,7 @@ const entriesWithContent = await Promise.all(
 );
 ---
 
-<section id="work" class={`py-20 px-4 bg-base-300`}>
+<section id="work" class={`py-20 px-4 ${background}`}>
     <div class="mx-auto max-w-4xl">
         <div class="text-center mb-12">
             <h2 class="text-4xl font-bold">Work Experience</h2>

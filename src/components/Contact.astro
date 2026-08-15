@@ -2,6 +2,8 @@
 import { getEntry, render } from 'astro:content';
 import { getIcon } from '../utils/iconMapper';
 
+const { background } = Astro.props;
+
 const contactEntry = await getEntry('contact', 'index');
 
 if (!contactEntry) {
@@ -15,7 +17,7 @@ const SectionIcon = getIcon(contact.icon);
 const FooterIcon = getIcon(contact.footerIcon);
 ---
 
-<footer class="footer footer-horizontal footer-center bg-base-300 py-10">
+<footer class={`footer footer-horizontal footer-center ${background} py-10`}>
     <aside>
         <SectionIcon class="inline-block size-20" />
         <p class="max-w-xl m-auto text-lg">

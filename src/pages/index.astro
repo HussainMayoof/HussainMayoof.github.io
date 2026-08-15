@@ -24,6 +24,18 @@ if (!generalEntry) {
     throw new Error('General entry not found');
 }
 const general = generalEntry.data;
+
+const sections = [
+    { Component: Skills, show: general.showSkillsSection },
+    { Component: Projects, show: general.showProjectsSection },
+    { Component: Blog, show: general.showBlogSection },
+    { Component: Work, show: general.showWorkSection },
+    { Component: Education, show: general.showEducationSection },
+    { Component: Certificates, show: general.showCertificatesSection },
+    { Component: Hackathons, show: general.showHackathonsSection },
+    { Component: Volunteering, show: general.showVolunteeringSection },
+    { Component: Contact, show: general.showContactSection },
+].filter((s) => s.show);
 ---
 
 <Layout
@@ -34,31 +46,12 @@ const general = generalEntry.data;
         <!-- Hero Section (Always visible) -->
         <Hero hero={heroEntry.data} />
 
-        <!-- Skills Section -->
-        {general.showSkillsSection && <Skills />}
-
-        <!-- Projects Section -->
-        {general.showProjectsSection && <Projects />}
-
-        <!-- Blog Section -->
-        {general.showBlogSection && <Blog />}
-
-        <!-- Work Experience Section -->
-        {general.showWorkSection && <Work />}
-
-        <!-- Education Section -->
-        {general.showEducationSection && <Education />}
-
-        <!-- Certificates Section -->
-        {general.showCertificatesSection && <Certificates />}
-
-        <!-- Hackathons Section -->
-        {general.showHackathonsSection && <Hackathons />}
-
-        <!-- Volunteering Section -->
-        {general.showVolunteeringSection && <Volunteering />}
-
-        <!-- Contact Section -->
-        {general.showContactSection && <Contact />}
+        {
+            sections.map(({ Component }, i) => (
+                <Component
+                    background={i % 2 === 0 ? 'bg-base-300' : 'bg-base-200'}
+                />
+            ))
+        }
     </main>
 </Layout>

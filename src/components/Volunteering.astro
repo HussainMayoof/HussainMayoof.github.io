@@ -3,12 +3,14 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import { formatPeriod, sortEntriesByTime } from '../utils/entryHelper.ts';
 
+const { background } = Astro.props;
+
 const volunteeringEntries = await getCollection('volunteering');
 
 const sortedVolunteering = sortEntriesByTime(volunteeringEntries, 'startDate');
 ---
 
-<section id="volunteering" class="py-20 px-4 bg-base-200">
+<section id="volunteering" class={`py-20 px-4 ${background}`}>
     <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12">
             <h2 class="text-4xl font-bold mb-4">Volunteering</h2>

@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import ProjectCard from './ProjectCard.astro';
 import { sortEntriesByTime } from '../../utils/entryHelper.ts';
 
+const { background } = Astro.props;
+
 const projectEntries = await getCollection('projects');
 
 const sortedProjects = sortEntriesByTime(projectEntries, 'startDate');
@@ -13,7 +15,7 @@ const featuredProjects = sortedProjects
     .slice(0, 3);
 ---
 
-<section id="projects" class="py-20 px-4 bg-base-200">
+<section id="projects" class={`py-20 px-4 ${background}`}>
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
             <h2 class="text-4xl font-bold mb-4">Check out my latest work</h2>
