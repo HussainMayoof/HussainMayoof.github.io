@@ -22,6 +22,7 @@ import {
     Hammer,
     Wrench,
     FolderCode,
+    File,
 } from '@lucide/astro';
 
 // Social media icon components
@@ -63,7 +64,8 @@ export type IconName =
     | 'Bluesky'
     | 'Instagram'
     | 'YouTube'
-    | 'Email';
+    | 'Email'
+    | 'File';
 
 export const iconMap: Record<IconName, AstroComponentFactory> = {
     Flower2,
@@ -96,6 +98,7 @@ export const iconMap: Record<IconName, AstroComponentFactory> = {
     Instagram,
     YouTube,
     Email: Mail,
+    File,
 };
 
 export const getIcon = (iconName: IconName) => {

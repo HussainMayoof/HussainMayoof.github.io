@@ -20,6 +20,8 @@ interface Props {
     };
 }
 
+const FileIconComponent = getIcon('File');
+
 const { hero } = Astro.props;
 ---
 
@@ -87,6 +89,16 @@ const { hero } = Astro.props;
                         );
                     })
                 }
+                <div class="tooltip tooltip-top" data-tip="CV/Resume">
+                    <a
+                        href="/CV.pdf"
+                        target="_blank"
+                        class="btn btn-circle btn-primary lg:btn-ghost"
+                        aria-label="CV/Resume"
+                    >
+                        <FileIconComponent class="size-6" />
+                    </a>
+                </div>
             </div>
         </div>
     </div>
