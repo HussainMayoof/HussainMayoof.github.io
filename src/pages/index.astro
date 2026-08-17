@@ -38,10 +38,7 @@ const sections = [
 ].filter((s) => s.show);
 ---
 
-<Layout
-    title={`${heroEntry.data.name}`}
-    description={heroEntry.data.description}
->
+<Layout title="" description={heroEntry.data.description}>
     <main>
         <!-- Hero Section (Always visible) -->
         <Hero hero={heroEntry.data} />

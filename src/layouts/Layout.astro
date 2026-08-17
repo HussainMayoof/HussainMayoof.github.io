@@ -57,7 +57,7 @@ const origin = Astro.url.origin;
         <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.png" />
         <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
+        <title>{title ? `Hussain Mayoof - ${title}` : 'Hussain Mayoof'}</title>
 
         <!-- View Transitions -->
         <ClientRouter />
