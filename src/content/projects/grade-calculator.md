@@ -13,8 +13,6 @@ skills:
 demoLink: https://grades.hussainmayoof.com/
 sourceLink: https://github.com/HussainMayoof/GradeCalculator
 ---
-# Grade Calculator
-
 This is a basic grade calculator tool that I personally use to quickly calculate my university grades.
 
 ## Features
