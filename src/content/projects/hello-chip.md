@@ -1,15 +1,17 @@
 ---
 featured: true
 category: experiments
-title: CHIP-8 Interpreter
+title: HelloCHIP
 description: A simple CHIP-8 interpreter/emulator
-image: '@assets/projects/chip-8-interpreter/image.png'
+image: '@assets/projects/hello-chip/image.png'
 startDate: 2026-08-23
 skills:
   - Python
   - uv
+  - PyQt6
+  - Pygame
   - Emulation
-sourceLink: https://github.com/HussainMayoof/CHIP8Interpreter
+sourceLink: https://github.com/HussainMayoof/HelloCHIP
 ---
 This is my first emulator-adjacent project. I want to use this as a starting point to hopefully be able to develop emulators for more advanced systems and consoles, and I hope to be able to create a basic Game Boy emulator within the coming weeks after I complete this.
 
@@ -18,23 +20,9 @@ This is my first emulator-adjacent project. I want to use this as a starting poi
 ## Features
 
 - Fully designed font created by me
+- All original instructions supported
 - Currently only supports original CHIP-8 games
 - Partial functionality
-
----
-
-## Usage
-
-> **Prerequisites**
-> 
-> - [uv](%5Bhttps://www.python.org/downloads/%5D\(https://docs.astral.sh/uv/getting-started/installation/\))
-
-1. Run `uv sync` to install dependencies
-1. Run the following command to start the emulator
-
-```bash
-uv run main.py "path-to-rom"
-```
 
 ---
 
@@ -43,14 +31,13 @@ uv run main.py "path-to-rom"
 I would like to thank the authors of the following materials for their invaluable contribution to this project
 
 - [Guide to making a CHIP-8 emulator](https://tobiasvl.github.io/blog/write-a-chip-8-emulator/#keypad) by Tobias Langhoff
-- [SDL Wiki](https://wiki.libsdl.org/SDL3/FrontPage) and [PySDL3](https://github.com/Aermoss/PySDL3)
+- [PyQt6 Tutorial](https://www.pythonguis.com/pyqt6-tutorial/) by Martin Fitzpatrick
 
 ---
 
 ## To Do
 
-- Add sounds
-- Add GUI
+- Add settings to GUI
 - Add debugging
 - Add SUPER-CHIP support
 - Add XO-CHIP support
